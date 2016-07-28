@@ -1,0 +1,7 @@
+<h1>All about <%= @book.title %></h1>
+<ul>
+  <li><%= @book.description %></li>
+  <li><%= @book.isbn %></li>
+</ul>
+<a href="/books">Back to all the books.</a>
+<a href="/books/<%= @book.id %>/edit">Edit this book.</a>

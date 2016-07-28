@@ -1,0 +1,21 @@
+<h1>Place of Books</h1>
+
+<% @books.each do |book| %>
+  <p>
+    <a href="/books/<%= book.id %>"><%= book.title %></a>
+  </p>
+<% end %>
+
+Enter a new book:
+<%= form_tag("/books") do %>
+<ul><li>
+  Title <%= text_field_tag "book[title]" %>
+</li>
+<li>
+  ISBN Number <%= text_field_tag "book[ISBN]" %>
+</li>
+<li>
+  Description <%= text_field_tag "book[description]" %>
+</li>
+  <%= submit_tag %>
+<% end %>

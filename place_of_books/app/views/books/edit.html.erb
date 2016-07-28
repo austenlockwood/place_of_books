@@ -1,0 +1,8 @@
+<h1>Edit <%= @book.title %></h1>
+<%= form_for @book, url: "/books/#{@book.id}" do |f|  %>
+  <%= f.text_field :title %>
+  <%= f.text_field :isbn %>
+  <%= f.submit %>
+<% end %>
+
+<!-- routes controller model views -->
