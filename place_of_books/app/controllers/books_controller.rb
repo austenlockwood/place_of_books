@@ -30,6 +30,13 @@ class BooksController < ApplicationController
     redirect_to "/books/#{@book.id}"
   end
 
+  def delete
+    @book = Book.find(params["id"])
+    @book.destroy(book_params)
+    @book
+    redirect_to "/books"
+  end
+
   private def book_params
     # Hash style acccess for params
     # params["pet"] # {name: "Gridley"}

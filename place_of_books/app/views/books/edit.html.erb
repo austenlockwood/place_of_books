@@ -1,7 +1,10 @@
 <h1>Edit <%= @book.title %></h1>
 <%= form_for @book, url: "/books/#{@book.id}" do |f|  %>
-  <%= f.text_field :title %>
-  <%= f.text_field :isbn %>
+  <p>Title: <%= f.text_field :title %></p>
+  <p>ISBN Number: <%= f.text_field :isbn %></p>
+  <p>Description: <%= f.text_field :description %></p>
+  <%= link_to "delete", book_path(id: @book.id), method: :delete %>
+
   <%= f.submit %>
 <% end %>
 
